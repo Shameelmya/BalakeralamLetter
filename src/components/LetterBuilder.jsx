@@ -51,19 +51,19 @@ export default function LetterBuilder({ initialData, onSubmit }) {
 
   return (
     <div className="animate-fade-in" style={{ paddingTop: '40px', width: '100%', paddingBottom: '100px' }}>
-      <div className="card" style={{ padding: '32px' }}>
-        <h2 style={{ fontSize: '28px', marginBottom: '32px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 700 }}>
+      <div className="card" style={{ padding: '16px' }}>
+        <h2 style={{ fontSize: '22px', marginBottom: '24px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 700, whiteSpace: 'nowrap' }}>
           Let's build your letter!
         </h2>
 
         {errorMsg && (
-          <div ref={errorRef} style={{ padding: '12px', backgroundColor: '#FDECEC', color: 'var(--color-primary)', borderRadius: '8px', marginBottom: '24px', fontSize: '14px', textAlign: 'center' }}>
+          <div ref={errorRef} style={{ padding: '12px', backgroundColor: '#FDECEC', color: 'var(--color-primary)', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', textAlign: 'center' }}>
             {errorMsg}
           </div>
         )}
 
-        <div style={{ marginBottom: '24px' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, color: 'var(--color-text)' }}>
+        <div style={{ marginBottom: '16px' }}>
+          <label style={{ display: 'block', marginBottom: '6px', fontWeight: 600, color: 'var(--color-text)', fontSize: '14px' }}>
             What's your name?
           </label>
           <input 
@@ -72,26 +72,28 @@ export default function LetterBuilder({ initialData, onSubmit }) {
             placeholder="Enter your name" 
             value={name}
             onChange={(e) => setName(e.target.value)}
-            style={{ marginBottom: 0 }}
+            style={{ marginBottom: 0, padding: '10px 12px', fontSize: '15px' }}
           />
         </div>
 
-        <div style={{ marginBottom: '24px' }}>
-          <label style={{ display: 'block', marginBottom: '12px', fontWeight: 600, color: 'var(--color-text)' }}>
+        <div style={{ marginBottom: '16px' }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, color: 'var(--color-text)', fontSize: '14px' }}>
             Choose a Template
           </label>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'nowrap', overflowX: 'auto', paddingBottom: '4px' }}>
             <button 
               className={`pill-btn ${mode === 'custom' ? 'active' : ''}`}
-              onClick={() => setMode('custom')}
+              onClick={() => { setMode('custom'); setContent(''); }}
+              style={{ padding: '6px 12px', fontSize: '13px', whiteSpace: 'nowrap' }}
             >
-              Custom Letter
+              Custom
             </button>
             {templates.map(tpl => (
               <button 
                 key={tpl.id}
                 className={`pill-btn ${mode === `template-${tpl.id}` ? 'active' : ''}`}
                 onClick={() => setMode(`template-${tpl.id}`)}
+                style={{ padding: '6px 12px', fontSize: '13px', whiteSpace: 'nowrap' }}
               >
                 Template {tpl.id}
               </button>

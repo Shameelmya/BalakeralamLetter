@@ -12,7 +12,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
   useEffect(() => {
     const calculateScale = () => {
       const containerWidth = Math.min(window.innerWidth - 32, 600) // max width of container
-      const availableHeight = window.innerHeight - 180 // Leave space for headers and footer buttons
+      const availableHeight = window.innerHeight - 260 // Leave plenty of space for headers and footer buttons on mobile
       
       const widthScale = containerWidth / 794
       const heightScale = availableHeight / 1123
@@ -57,7 +57,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
   }
 
   return (
-    <div className="animate-fade-in" style={{ paddingTop: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '100px' }}>
+    <div className="animate-fade-in" style={{ paddingTop: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '80px', overflow: 'hidden' }}>
       
       <h2 style={{ fontSize: '20px', marginBottom: '8px', color: 'var(--color-primary)' }}>
         A little piece of your heart, on paper. ❤️
