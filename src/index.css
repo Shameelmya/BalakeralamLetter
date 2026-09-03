@@ -1,0 +1,263 @@
+@font-face {
+  font-family: 'A10';
+  src: url('/A10-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-ui: 'Playpen Sans', 'Comic Sans MS', cursive, sans-serif;
+  --font-malayalam: 'A10', sans-serif;
+  --font-english: 'Schoolbell', cursive;
+
+  --color-bg: #EAE0D5; /* A warm off-white/light brown background */
+  --color-paper: #FDFBF8; /* Off-white paper */
+  --color-text: #333333; 
+  --color-primary: #C05A17; /* Rich orange/brown from the uploaded image */
+  --color-primary-hover: #A04A10;
+  --color-magenta: #C05A17; /* Syncing with the primary theme color */
+  --color-lines-h: rgba(0, 0, 255, 0.08); /* Light blue lines (visible but soft) */
+  --color-border: #D8CCC0;
+
+  --line-height-a4: 38px; /* Increased line space for larger font */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 18px; /* Slightly larger for Schoolbell */
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(192, 90, 23, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(192, 90, 23, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 2px 5px rgba(192, 90, 23, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-text);
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 18px; /* Slightly larger for Schoolbell */
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pill-btn {
+  background-color: white;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.pill-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.pill-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  max-width: 120px;
+  margin-bottom: 8px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+  margin-bottom: 16px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 18px; /* Slightly larger for Schoolbell */
+  font-family: var(--font-ui);
+  margin-bottom: 24px;
+  background-color: #FAFAFA;
+}
+
+.input-field:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  background-color: white;
+}
+
+/* A4 Paper styles */
+.a4-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.a4-paper {
+  width: 794px;
+  height: 1123px;
+  background-color: var(--color-paper);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Using SVG background to ensure html2canvas captures the lines reliably. Adding gap on sides and more opacity */
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-position: 0 42px; /* Adjusted so lines align with text baseline perfectly */
+  padding: 156px 80px 40px 100px; /* Pushed top padding down so text starts on the 5th line */
+}
+
+.a4-content {
+  font-family: var(--font-malayalam);
+  font-size: 20px; /* Slightly reduced font size */
+  line-height: var(--line-height-a4);
+  color: var(--color-text);
+  white-space: pre-wrap;
+  text-align: left;
+  letter-spacing: 0.2px;
+}
+
+/* English bits in the letter */
+.a4-content .english {
+  font-family: var(--font-english);
+  font-size: 18px; 
+}
+
+.a4-footer {
+  position: absolute;
+  bottom: 80px;
+  right: 60px;
+  text-align: right;
+  font-family: var(--font-malayalam);
+  font-size: 16px;
+  line-height: var(--line-height-a4);
+}
+
+.a4-signature {
+  font-family: var(--font-english);
+  font-size: 20px;
+  color: var(--color-primary);
+  margin-top: 8px;
+}
+
+.a4-date {
+  font-family: var(--font-english);
+  font-size: 16px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.a4-closing {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  font-family: var(--font-english);
+  font-size: 20px;
+  color: var(--color-magenta);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
