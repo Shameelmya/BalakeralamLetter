@@ -29,9 +29,8 @@ const A4Paper = forwardRef(({ name, content }, ref) => {
       <div className="a4-content" style={{ position: 'relative', zIndex: 1 }}>
         {content}
         
-        <div style={{ marginTop: '38px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingRight: '40px', transform: 'translateY(-8px)' }}>
-          <div className="english" style={{ fontSize: '16px', color: '#666', lineHeight: '38px' }}>{date}</div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ marginTop: '38px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingRight: '40px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
             <div style={{ fontSize: '18px', color: '#666', lineHeight: '38px' }}>സ്നേഹപൂർവ്വം, ❤️</div>
             <div 
               className={hasMalayalam ? "" : "english"} 
@@ -45,6 +44,7 @@ const A4Paper = forwardRef(({ name, content }, ref) => {
               {name}
             </div>
           </div>
+          <div className="english" style={{ fontSize: '16px', color: '#666', lineHeight: '38px' }}>{date}</div>
         </div>
       </div>
     </div>
