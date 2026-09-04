@@ -32,26 +32,44 @@ export default function HomePage({ onStart }) {
         
         {/* Button positioned absolutely relative to the image boundaries */}
         <div style={{
-          position: 'absolute',
-          bottom: '13%', // Precisely places it over the board legs within the image
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center'
-        }}>
+        position: 'absolute', 
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+        maxWidth: '56.25vh',
+        aspectRatio: '1080 / 1920',
+        pointerEvents: 'none'
+      }}>
+        {/* Adjusted bottom position to move button slightly higher */}
+        <div style={{ position: 'absolute', bottom: '18%', left: '50%', transform: 'translateX(-50%)', width: '100%', textAlign: 'center', pointerEvents: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
           <button 
             className="btn-primary" 
             onClick={onStart} 
             style={{ 
               padding: '12px 30px', 
               fontSize: '18px', 
-              borderRadius: '28px 10px 28px 10px', // Playful, slightly irregular shape
+              borderRadius: '28px 10px 28px 10px', 
               boxShadow: '0 8px 24px rgba(0,0,0,0.2)' 
             }}
           >
             Write Your Letter
           </button>
+          
+          <div style={{ fontSize: '12px', color: '#888', fontFamily: 'var(--font-ui)' }}>
+            Designed by{' '}
+            <a 
+              href="https://wa.me/917559865389?text=Hello%2C%20we%20have%20experienced%20your%20letter%20website%20for%20Balakeralam.%20We%20have%20an%20enquiry." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 800 }}
+            >
+              Dot projects
+            </a>
+          </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
