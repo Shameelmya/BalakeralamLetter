@@ -41,8 +41,8 @@ export default function HomePage({ onStart }) {
         aspectRatio: '1080 / 1920',
         pointerEvents: 'none'
       }}>
-        {/* Adjusted bottom position to move button slightly higher */}
-        <div style={{ position: 'absolute', bottom: '18%', left: '50%', transform: 'translateX(-50%)', width: '100%', textAlign: 'center', pointerEvents: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+        {/* Adjusted bottom position to move button slightly lower */}
+        <div style={{ position: 'absolute', bottom: '12%', left: '50%', transform: 'translateX(-50%)', width: '100%', textAlign: 'center', pointerEvents: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
           <button 
             className="btn-primary" 
             onClick={onStart} 
@@ -56,13 +56,13 @@ export default function HomePage({ onStart }) {
             Write Your Letter
           </button>
           
-          <div style={{ fontSize: '12px', color: '#888', fontFamily: 'var(--font-ui)' }}>
+          <div style={{ fontSize: '12px', color: '#888', fontFamily: "'Sora', sans-serif", fontWeight: 300 }}>
             Designed by{' '}
             <a 
               href="https://wa.me/917559865389?text=Hello%2C%20we%20have%20experienced%20your%20letter%20website%20for%20Balakeralam.%20We%20have%20an%20enquiry." 
               target="_blank" 
               rel="noopener noreferrer"
-              style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 800 }}
+              style={{ color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 300 }}
             >
               Dot projects
             </a>
