@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './index.css'
 import HomePage from './components/HomePage'
 import LetterBuilder from './components/LetterBuilder'
@@ -11,6 +11,10 @@ function App() {
     content: '',
     templateId: null
   })
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [step])
 
   const handleStart = () => {
     setStep('build')

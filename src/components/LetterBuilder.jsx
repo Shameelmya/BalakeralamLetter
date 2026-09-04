@@ -54,93 +54,103 @@ export default function LetterBuilder({ initialData, onSubmit }) {
       minHeight: '100vh', 
       width: '100%', 
       paddingTop: '20px', 
-      paddingBottom: '100px',
-      background: 'linear-gradient(135deg, #FFD54F, #FF8F00)' // Full opacity yellow-orange gradient
+      paddingBottom: '120px',
+      backgroundColor: 'var(--color-bg)'
     }}>
       <div style={{ maxWidth: '600px', margin: '0 auto', padding: '0 16px' }}>
-        <div className="card" style={{ padding: '16px', border: 'none', backgroundColor: 'rgba(255,255,255,0.95)', boxShadow: '0 10px 40px rgba(0,0,0,0.1)' }}>
-          <h2 style={{ fontSize: '24px', marginBottom: '24px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 300, whiteSpace: 'nowrap', fontFamily: 'var(--font-malayalam)' }}>
-            പ്രിയപ്പെട്ട ടീച്ചറേ.. ❤️
-          </h2>
+        
+        {/* Yellow-orange gradient container wrapper */}
+        <div style={{
+          background: 'linear-gradient(135deg, #FFD54F, #FF8F00)',
+          padding: '16px',
+          borderRadius: '24px',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+        }}>
+          {/* White Card containing the form */}
+          <div className="card" style={{ padding: '16px', border: 'none', backgroundColor: '#ffffff', borderRadius: '16px' }}>
+            <h2 style={{ fontSize: '24px', marginBottom: '24px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 300, whiteSpace: 'nowrap', fontFamily: 'var(--font-malayalam)' }}>
+              പ്രിയപ്പെട്ട ടീച്ചറേ.. ❤️
+            </h2>
 
-          {errorMsg && (
-            <div ref={errorRef} style={{ padding: '12px', backgroundColor: '#FDECEC', color: 'var(--color-primary)', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', textAlign: 'center' }}>
-              {errorMsg}
+            {errorMsg && (
+              <div ref={errorRef} style={{ padding: '12px', backgroundColor: '#FDECEC', color: 'var(--color-primary)', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', textAlign: 'center' }}>
+                {errorMsg}
+              </div>
+            )}
+
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', marginBottom: '6px', fontWeight: 400, color: '#888', fontSize: '13px', letterSpacing: '0.5px' }}>
+                What's Your Name?
+              </label>
+              <input 
+                type="text" 
+                className="input-field" 
+                placeholder="Enter Your Name" 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                style={{ marginBottom: 0, padding: '10px 12px', fontSize: '15px' }}
+              />
             </div>
-          )}
 
-          <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', marginBottom: '6px', fontWeight: 400, color: '#888', fontSize: '13px', letterSpacing: '0.5px' }}>
-              What's Your Name?
-            </label>
-            <input 
-              type="text" 
-              className="input-field" 
-              placeholder="Enter Your Name" 
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              style={{ marginBottom: 0, padding: '10px 12px', fontSize: '15px' }}
-            />
-          </div>
-
-          <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', marginBottom: '8px', fontWeight: 400, color: '#888', fontSize: '13px', letterSpacing: '0.5px' }}>
-              Choose A Template
-            </label>
-            <div style={{ display: 'flex', gap: '6px', flexWrap: 'nowrap', overflowX: 'auto', paddingBottom: '4px' }}>
-              <button 
-                className={`pill-btn ${mode === 'custom' ? 'active' : ''}`}
-                onClick={() => { setMode('custom'); setContent(''); }}
-                style={{ padding: '6px 12px', fontSize: '13px', whiteSpace: 'nowrap' }}
-              >
-                Custom
-              </button>
-              {templates.map(tpl => (
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: 400, color: '#888', fontSize: '13px', letterSpacing: '0.5px' }}>
+                Choose A Template
+              </label>
+              <div style={{ display: 'flex', gap: '6px', flexWrap: 'nowrap', overflowX: 'auto', paddingBottom: '4px' }}>
                 <button 
-                  key={tpl.id}
-                  className={`pill-btn ${mode === `template-${tpl.id}` ? 'active' : ''}`}
-                  onClick={() => setMode(`template-${tpl.id}`)}
+                  className={`pill-btn ${mode === 'custom' ? 'active' : ''}`}
+                  onClick={() => { setMode('custom'); setContent(''); }}
                   style={{ padding: '6px 12px', fontSize: '13px', whiteSpace: 'nowrap' }}
                 >
-                  Template {tpl.id}
+                  Custom
                 </button>
-              ))}
+                {templates.map(tpl => (
+                  <button 
+                    key={tpl.id}
+                    className={`pill-btn ${mode === `template-${tpl.id}` ? 'active' : ''}`}
+                    onClick={() => setMode(`template-${tpl.id}`)}
+                    style={{ padding: '6px 12px', fontSize: '13px', whiteSpace: 'nowrap' }}
+                  >
+                    Template {tpl.id}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div style={{ marginBottom: '16px' }}>
-            <label style={{ display: 'block', marginBottom: '8px', fontWeight: 400, color: '#888', fontSize: '13px', letterSpacing: '0.5px' }}>
-              Write Or Edit Your Letter Here (Max ~{MAX_CHARS} Chars):
-            </label>
-            <div style={{ position: 'relative' }}>
-              <textarea 
-                className="input-field" 
-                style={{ 
-                  minHeight: '380px', // Significantly increased height
-                  fontFamily: 'var(--font-ui)', 
-                  fontSize: '16px',
-                  lineHeight: 1.8,
-                  resize: 'vertical',
-                  marginBottom: 0,
-                  borderColor: content.length > MAX_CHARS ? 'red' : 'var(--color-border)'
-                }}
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-              />
-              <div style={{ position: 'absolute', bottom: '12px', right: '12px', fontSize: '12px', color: content.length > MAX_CHARS ? 'red' : '#888' }}>
-                {content.length} / {MAX_CHARS}
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{ display: 'block', marginBottom: '8px', fontWeight: 400, color: '#888', fontSize: '13px', letterSpacing: '0.5px' }}>
+                Write Or Edit Your Letter Here (Max ~{MAX_CHARS} Chars):
+              </label>
+              <div style={{ position: 'relative' }}>
+                <textarea 
+                  className="input-field" 
+                  style={{ 
+                    minHeight: '380px', 
+                    fontFamily: 'var(--font-ui)', 
+                    fontSize: '16px',
+                    lineHeight: 1.8,
+                    resize: 'vertical',
+                    marginBottom: 0,
+                    borderColor: content.length > MAX_CHARS ? 'red' : 'var(--color-border)'
+                  }}
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                />
+                <div style={{ position: 'absolute', bottom: '12px', right: '12px', fontSize: '12px', color: content.length > MAX_CHARS ? 'red' : '#888' }}>
+                  {content.length} / {MAX_CHARS}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Button fixed at the very bottom, full width */}
-      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 10 }}>
+      {/* Button floating at the bottom */}
+      <div style={{ position: 'fixed', bottom: '24px', left: '16px', right: '16px', display: 'flex', justifyContent: 'center', zIndex: 10, maxWidth: '600px', margin: '0 auto' }}>
         <button 
           className="btn-primary" 
           onClick={handleSubmit} 
-          style={{ width: '100%', padding: '20px 0', fontSize: '18px', borderRadius: '0', boxShadow: '0 -4px 20px rgba(0,0,0,0.15)' }}
+          style={{ width: '100%', padding: '16px 0', fontSize: '18px', borderRadius: '28px', boxShadow: '0 10px 30px rgba(192, 90, 23, 0.4)' }}
         >
           Generate Letter
         </button>

@@ -88,7 +88,10 @@ export default function LetterPreview({ data, onEdit, onNew }) {
           style={{ 
             width: '100%', 
             height: 1123 * scale,
-            position: 'relative'
+            position: 'relative',
+            borderRadius: '24px 24px 0 0',
+            overflow: 'hidden',
+            transform: 'translateZ(0)'
           }}
         >
           <div style={{ '--a4-scale': scale, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
@@ -104,6 +107,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
           justifyContent: 'space-around',
           alignItems: 'center',
           padding: '16px 8px',
+          borderRadius: '0 0 24px 24px'
         }}>
           {/* Share Button */}
           <button onClick={handleShare} disabled={isExporting} style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', cursor: 'pointer', opacity: isExporting ? 0.5 : 1 }}>
