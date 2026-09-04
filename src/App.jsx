@@ -60,7 +60,7 @@ function App() {
         audioRef.current.volume = 0;
       }
       audioRef.current.play().then(() => {
-        fadeAudio(audioRef.current, 0.2, 3000);
+        fadeAudio(audioRef.current, 0.08, 3000);
       }).catch(e => console.log('Audio play error:', e))
     }
   }
