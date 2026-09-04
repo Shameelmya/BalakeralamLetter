@@ -14,25 +14,74 @@ function App() {
   
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef(null)
+  const fadeIntervalRef = useRef(null)
 
   useEffect(() => {
     // Initialize audio only once
     if (!audioRef.current) {
       const audio = new Audio('/music.mp3')
       audio.loop = true
-      audio.volume = 0.2 // low volume
+      audio.volume = 0 // start at 0 for fade in
       audioRef.current = audio
     }
   }, [])
 
+  const fadeAudio = (audio, targetVolume, duration) => {
+    return new Promise(resolve => {
+      if (fadeIntervalRef.current) {
+        clearInterval(fadeIntervalRef.current)
+      }
+      
+      const steps = 30;
+      const stepTime = duration / steps;
+      const stepVolume = (targetVolume - audio.volume) / steps;
+      
+      let currentStep = 0;
+      fadeIntervalRef.current = setInterval(() => {
+        currentStep++;
+        let nextVolume = audio.volume + stepVolume;
+        if (nextVolume < 0) nextVolume = 0;
+        if (nextVolume > 1) nextVolume = 1;
+        
+        audio.volume = nextVolume;
+        
+        if (currentStep >= steps || (stepVolume > 0 && audio.volume >= targetVolume) || (stepVolume < 0 && audio.volume <= targetVolume)) {
+          clearInterval(fadeIntervalRef.current);
+          audio.volume = targetVolume;
+          resolve();
+        }
+      }, stepTime);
+    });
+  }
+
+  const playWithFade = () => {
+    if (audioRef.current) {
+      if (audioRef.current.paused) {
+        audioRef.current.volume = 0;
+      }
+      audioRef.current.play().then(() => {
+        fadeAudio(audioRef.current, 0.2, 3000);
+      }).catch(e => console.log('Audio play error:', e))
+    }
+  }
+
+  const pauseWithFade = () => {
+    if (audioRef.current) {
+      fadeAudio(audioRef.current, 0, 3000).then(() => {
+        audioRef.current.pause();
+      });
+    }
+  }
+
   const toggleMute = () => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.pause()
+        setIsPlaying(false)
+        pauseWithFade()
       } else {
-        audioRef.current.play().catch(e => console.log('Audio play error:', e))
+        setIsPlaying(true)
+        playWithFade()
       }
-      setIsPlaying(!isPlaying)
     }
   }
 
@@ -43,9 +92,8 @@ function App() {
   const handleStart = () => {
     setStep('build')
     if (audioRef.current && !isPlaying) {
-      audioRef.current.play().then(() => {
-        setIsPlaying(true)
-      }).catch(e => console.log('Autoplay prevented:', e))
+      setIsPlaying(true)
+      playWithFade()
     }
   }
 

@@ -6,7 +6,7 @@ export const exportToImage = async (elementRef, filename = "Teachers-Day-Letter.
 
   try {
     const canvas = await html2canvas(elementRef.current, {
-      scale: 5, // Extremely high resolution for PNG sharing
+      scale: 6, // Maximum resolution for perfect HD PNG sharing
       useCORS: true,
       backgroundColor: '#FDFBF7'
     })
