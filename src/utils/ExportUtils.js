@@ -30,8 +30,6 @@ export const shareImage = async (blob, filename = "Teachers-Day-Letter.png") => 
   if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {
       await navigator.share({
-        title: 'Happy Teachers’ Day',
-        text: 'A little piece of my heart, on paper. ❤️',
         files: [file]
       })
       return true
