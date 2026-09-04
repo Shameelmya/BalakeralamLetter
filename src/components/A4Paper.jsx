@@ -16,11 +16,11 @@ const A4Paper = forwardRef(({ name, content }, ref) => {
       <div className="a4-content">
         {content}
         
-        <div style={{ marginTop: '50px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', paddingRight: '40px' }}>
-          <div className="english" style={{ fontSize: '18px', color: '#666' }}>{date}</div>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <div style={{ fontSize: '20px', color: '#666' }}>സ്നേഹപൂർവ്വം, ❤️</div>
-            <div className="english" style={{ fontSize: '26px', color: 'var(--color-primary)' }}>{name}</div>
+        <div style={{ marginTop: '48px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingRight: '40px', transform: 'translateY(-8px)' }}>
+          <div className="english" style={{ fontSize: '18px', color: '#666', lineHeight: '38px' }}>{date}</div>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ fontSize: '20px', color: '#666', lineHeight: '38px' }}>സ്നേഹപൂർവ്വം, ❤️</div>
+            <div className="english" style={{ fontSize: '28px', color: 'var(--color-primary)', lineHeight: '38px' }}>{name}</div>
           </div>
         </div>
       </div>

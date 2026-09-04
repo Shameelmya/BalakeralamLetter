@@ -136,12 +136,12 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         </div>
       </div>
 
-      {/* Generate Button in normal flow to perfectly match input width */}
+      {/* Generate Button in normal flow */}
       <div style={{ marginTop: '32px', marginBottom: '24px', display: 'flex', justifyContent: 'center' }}>
         <button 
           className="btn-primary" 
           onClick={handleSubmit} 
-          style={{ width: '100%', padding: '16px 0', fontSize: '18px', borderRadius: '16px', boxShadow: '0 8px 24px rgba(192, 90, 23, 0.3)' }}
+          style={{ width: '100%', maxWidth: '240px', padding: '16px 0', fontSize: '18px', borderRadius: '16px', boxShadow: '0 8px 24px rgba(192, 90, 23, 0.3)' }}
         >
           Generate Letter
         </button>
