@@ -210,7 +210,7 @@ button {
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 270px 80px 40px 100px; /* Pushed top padding down so text starts on the 8th line */
+  padding: 270px 110px 40px 130px; /* Pushed top padding down so text starts on the 8th line, increased L/R margins */
 }
 
 .a4-paper::before {
