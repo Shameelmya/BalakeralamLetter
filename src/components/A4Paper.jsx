@@ -17,10 +17,10 @@ const A4Paper = forwardRef(({ name, content }, ref) => {
     >
       <div className="lines-layer" style={{
         position: 'absolute',
-        top: '194px',
+        top: '232px',
         left: 0,
         right: 0,
-        height: '798px',
+        height: '760px',
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
         backgroundRepeat: 'repeat',
         zIndex: 0,
