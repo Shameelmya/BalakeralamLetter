@@ -349,3 +349,19 @@ button {
   color: #555;
   transition: color 0.3s ease;
 }
+
+/* --- Final Screen Animated Gradient --- */
+@keyframes gradientMove {
+  0% { background-position: 0% 0%, 0% 50%; }
+  50% { background-position: 0% 0%, 100% 50%; }
+  100% { background-position: 0% 0%, 0% 50%; }
+}
+
+.animated-bg-gradient {
+  background-color: #5C3A21;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"), 
+    linear-gradient(135deg, #4A2E1B, #8B5A2B, #C49A45, #5C3A21);
+  background-size: auto, 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
