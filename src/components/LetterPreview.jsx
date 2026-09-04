@@ -71,44 +71,37 @@ export default function LetterPreview({ data, onEdit, onNew }) {
         </div>
       )}
 
-      {/* Wrapper to hold the scaled paper and menu as one card */}
+      {/* Paper Container directly on background */}
       <div 
         style={{ 
-          width: 794 * scale, 
-          marginBottom: '32px',
-          boxShadow: '0 15px 40px rgba(0,0,0,0.15)',
+          width: 794 * scale,
+          height: 1123 * scale,
+          position: 'relative',
           borderRadius: '24px',
           overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          backgroundColor: 'var(--color-primary)'
+          boxShadow: '0 15px 40px rgba(0,0,0,0.1)',
+          marginBottom: '24px',
+          WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+          transform: 'translateZ(0)'
         }}
       >
-        <div 
-          style={{ 
-            width: '100%', 
-            height: 1123 * scale,
-            position: 'relative',
-            borderRadius: '24px 24px 0 0',
-            overflow: 'hidden',
-            transform: 'translateZ(0)'
-          }}
-        >
-          <div style={{ '--a4-scale': scale, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
-            <A4Paper ref={paperRef} name={data.name} content={data.content} />
-          </div>
+        <div style={{ '--a4-scale': scale, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
+          <A4Paper ref={paperRef} name={data.name} content={data.content} />
         </div>
+      </div>
 
-        {/* Brown Menu Area */}
-        <div style={{
-          width: '100%',
-          backgroundColor: 'var(--color-primary)', 
-          display: 'flex',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          padding: '16px 8px',
-          borderRadius: '0 0 24px 24px'
-        }}>
+      {/* Floating Brown Menu Area */}
+      <div style={{
+        width: '100%',
+        maxWidth: Math.max(794 * scale, 320),
+        backgroundColor: 'var(--color-primary)', 
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        padding: '16px 8px',
+        borderRadius: '24px',
+        boxShadow: '0 10px 30px rgba(213, 55, 104, 0.2)'
+      }}>
           {/* Share Button */}
           <button onClick={handleShare} disabled={isExporting} style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', cursor: 'pointer', opacity: isExporting ? 0.5 : 1 }}>
             <div style={{ width: '48px', height: '48px', borderRadius: '16px', backgroundColor: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', transition: 'transform 0.2s' }} onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.92)'} onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>

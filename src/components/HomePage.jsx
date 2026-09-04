@@ -47,10 +47,11 @@ export default function HomePage({ onStart }) {
             className="btn-primary" 
             onClick={onStart} 
             style={{ 
-              padding: '12px 30px', 
+              padding: '14px 32px', 
               fontSize: '18px', 
-              borderRadius: '28px 10px 28px 10px', 
-              boxShadow: '0 8px 24px rgba(0,0,0,0.2)' 
+              borderRadius: '20px 35px 25px 40px / 40px 20px 40px 25px', 
+              boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+              letterSpacing: '0.5px'
             }}
           >
             Write Your Letter
