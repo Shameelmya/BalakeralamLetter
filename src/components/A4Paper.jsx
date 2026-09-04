@@ -18,7 +18,7 @@ const A4Paper = forwardRef(({ name, content }, ref) => {
       <div className="a4-content">
         {content}
         
-        <div style={{ marginTop: '48px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingRight: '40px', transform: 'translateY(-8px)' }}>
+        <div style={{ marginTop: '0px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingRight: '40px', transform: 'translateY(-8px)' }}>
           <div className="english" style={{ fontSize: '16px', color: '#666', lineHeight: '38px' }}>{date}</div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ fontSize: '18px', color: '#666', lineHeight: '38px' }}>സ്നേഹപൂർവ്വം, ❤️</div>

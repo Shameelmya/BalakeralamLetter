@@ -210,7 +210,7 @@ button {
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 270px 110px 40px 130px; /* Pushed top padding down so text starts on the 8th line, increased L/R margins */
+  padding: 194px 110px 40px 130px; /* Pushed top padding down so text starts on the 6th line, increased L/R margins */
 }
 
 .a4-paper::before {
@@ -221,9 +221,9 @@ button {
   background-position: 0 42px; /* Adjusted so lines align with text baseline perfectly */
   background-repeat: repeat;
   pointer-events: none;
-  /* Mask out the top 280px and bottom (after 1000px) */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 280px, black 280px, black 1000px, transparent 1000px);
-  mask-image: linear-gradient(to bottom, transparent 280px, black 280px, black 1000px, transparent 1000px);
+  /* Mask out the top 204px and bottom (after 1000px) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 204px, black 204px, black 1000px, transparent 1000px);
+  mask-image: linear-gradient(to bottom, transparent 204px, black 204px, black 1000px, transparent 1000px);
   z-index: 0;
 }
 
