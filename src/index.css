@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap');
+
 @font-face {
   font-family: 'A10';
   src: url('/A10-Regular.ttf') format('truetype');
@@ -6,7 +8,7 @@
 }
 
 :root {
-  --font-ui: 'Playpen Sans', 'Comic Sans MS', cursive, sans-serif;
+  --font-ui: 'Sora', sans-serif;
   --font-malayalam: 'A10', sans-serif;
   --font-english: 'Schoolbell', cursive;
 
@@ -49,7 +51,7 @@ button {
   padding: 14px 32px;
   border-radius: 30px;
   font-size: 18px; /* Slightly larger for Schoolbell */
-  font-weight: 600;
+  font-weight: 300;
   transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   display: inline-flex;
   align-items: center;
@@ -80,7 +82,7 @@ button {
   padding: 14px 32px;
   border-radius: 30px;
   font-size: 18px; /* Slightly larger for Schoolbell */
-  font-weight: 600;
+  font-weight: 300;
   border: 1px solid var(--color-border);
   transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   display: inline-flex;
@@ -113,7 +115,7 @@ button {
   color: var(--color-text);
   padding: 10px 20px;
   border-radius: 20px;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 16px;
   transition: all 0.2s ease;
 }

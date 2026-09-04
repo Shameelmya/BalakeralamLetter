@@ -96,7 +96,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
             style={{ flex: 1, padding: '10px 4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '6px', background: '#e8f5e9', color: '#2e7d32', border: '1px solid #c8e6c9', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s', opacity: isExporting ? 0.5 : 1 }}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>Share</span>
+            <span style={{ fontSize: '12px', fontWeight: 300 }}>Share</span>
           </button>
           
           {/* Download Button (Blue) */}
@@ -106,7 +106,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
             style={{ flex: 1, padding: '10px 4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '6px', background: '#e3f2fd', color: '#1565c0', border: '1px solid #bbdefb', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s', opacity: isExporting ? 0.5 : 1 }}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>Save</span>
+            <span style={{ fontSize: '12px', fontWeight: 300 }}>Save</span>
           </button>
           
           {/* Edit Button (Orange) */}
@@ -116,7 +116,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
             style={{ flex: 1, padding: '10px 4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '6px', background: '#fff3e0', color: '#e65100', border: '1px solid #ffe0b2', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s', opacity: isExporting ? 0.5 : 1 }}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>Edit</span>
+            <span style={{ fontSize: '12px', fontWeight: 300 }}>Edit</span>
           </button>
           
           {/* New Button (Purple) */}
@@ -126,7 +126,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
             style={{ flex: 1, padding: '10px 4px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '6px', background: '#f3e5f5', color: '#7b1fa2', border: '1px solid #e1bee7', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s', opacity: isExporting ? 0.5 : 1 }}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-            <span style={{ fontSize: '12px', fontWeight: 600 }}>New</span>
+            <span style={{ fontSize: '12px', fontWeight: 300 }}>New</span>
           </button>
           
         </div>

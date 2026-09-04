@@ -52,8 +52,8 @@ export default function LetterBuilder({ initialData, onSubmit }) {
   return (
     <div className="animate-fade-in" style={{ paddingTop: '40px', width: '100%', paddingBottom: '100px' }}>
       <div className="card" style={{ padding: '16px' }}>
-        <h2 style={{ fontSize: '22px', marginBottom: '24px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 700, whiteSpace: 'nowrap' }}>
-          Let's build your letter!
+        <h2 style={{ fontSize: '24px', marginBottom: '24px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 300, whiteSpace: 'nowrap', fontFamily: 'var(--font-malayalam)' }}>
+          പ്രിയപ്പെട്ട ടീച്ചറേ.. ❤️
         </h2>
 
         {errorMsg && (
@@ -63,7 +63,7 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         )}
 
         <div style={{ marginBottom: '16px' }}>
-          <label style={{ display: 'block', marginBottom: '6px', fontWeight: 600, color: 'var(--color-text)', fontSize: '14px' }}>
+          <label style={{ display: 'block', marginBottom: '6px', fontWeight: 300, color: 'var(--color-text)', fontSize: '14px' }}>
             What's your name?
           </label>
           <input 
@@ -77,7 +77,7 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         </div>
 
         <div style={{ marginBottom: '16px' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, color: 'var(--color-text)', fontSize: '14px' }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 300, color: 'var(--color-text)', fontSize: '14px' }}>
             Choose a Template
           </label>
           <div style={{ display: 'flex', gap: '6px', flexWrap: 'nowrap', overflowX: 'auto', paddingBottom: '4px' }}>
@@ -101,8 +101,8 @@ export default function LetterBuilder({ initialData, onSubmit }) {
           </div>
         </div>
 
-        <div style={{ marginBottom: '24px' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, color: 'var(--color-text)' }}>
+        <div style={{ marginBottom: '16px' }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 300, color: 'var(--color-text)' }}>
             Write or edit your letter here (Max ~{MAX_CHARS} chars):
           </label>
           <div style={{ position: 'relative' }}>
