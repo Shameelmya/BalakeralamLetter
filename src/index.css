@@ -217,7 +217,7 @@ button {
 
 .a4-content {
   font-family: var(--font-malayalam);
-  font-size: 20px; /* Slightly reduced font size */
+  font-size: 17px; /* Reduced from 20px */
   line-height: var(--line-height-a4);
   color: var(--color-text);
   white-space: pre-wrap;
@@ -228,7 +228,7 @@ button {
 /* English bits in the letter */
 .a4-content .english {
   font-family: var(--font-english);
-  font-size: 18px; 
+  font-size: 16px; 
 }
 
 .a4-footer {

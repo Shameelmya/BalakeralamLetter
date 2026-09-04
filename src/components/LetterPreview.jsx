@@ -59,9 +59,9 @@ export default function LetterPreview({ data, onEdit, onNew }) {
   return (
     <div className="animate-fade-in" style={{ paddingTop: '0px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '80px', overflow: 'hidden' }}>
       
-      <div style={{ textAlign: 'center', margin: '0px 16px 12px' }}>
-        <h2 style={{ fontFamily: 'var(--font-prakasham)', fontSize: '18px', color: 'var(--color-primary)', fontWeight: 800 }}>
-          എത്രയും പ്രിയപ്പെട്ട ടീച്ചർ വായിക്കാൻ.. ❤️
+      <div style={{ textAlign: 'center', margin: '0px 16px 24px' }}>
+        <h2 style={{ fontFamily: 'var(--font-prakasham)', fontSize: '24px', color: 'var(--color-primary)', fontWeight: 300, lineHeight: '1.4' }}>
+          എത്രയും പ്രിയപ്പെട്ട ടീച്ചർ<br/>വായിക്കാൻ.. ❤️
         </h2>
       </div>
 
@@ -107,7 +107,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
           display: 'flex',
           justifyContent: 'space-around',
           alignItems: 'center',
-          padding: '16px 8px'
+          padding: '12px 8px'
         }}>
           {/* Share Button */}
           <button onClick={handleShare} disabled={isExporting} style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', cursor: 'pointer', opacity: isExporting ? 0.5 : 1 }}>
