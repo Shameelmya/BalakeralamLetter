@@ -91,7 +91,8 @@ export default function LetterPreview({ data, onEdit, onNew }) {
             width: '100%', 
             height: 1123 * scale,
             position: 'relative',
-            backgroundColor: '#fff'
+            borderRadius: '24px 24px 0 0',
+            overflow: 'hidden'
           }}
         >
           <div style={{ '--a4-scale': scale, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
