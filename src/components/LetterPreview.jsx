@@ -57,7 +57,22 @@ export default function LetterPreview({ data, onEdit, onNew }) {
   }
 
   return (
-    <div className="animate-fade-in" style={{ paddingTop: '0px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '80px', overflow: 'hidden' }}>
+    <div className="animate-fade-in" style={{ 
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100vh',
+      overflowY: 'auto',
+      paddingTop: '32px',
+      paddingBottom: '80px',
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center',
+      backgroundColor: '#E6D4C4',
+      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E")`,
+      zIndex: 10
+    }}>
       
       <div style={{ textAlign: 'center', margin: '0px 16px 24px' }}>
         <h2 style={{ fontFamily: 'var(--font-prakasham)', fontSize: '24px', color: 'var(--color-primary)', fontWeight: 300, lineHeight: '1.4' }}>
