@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
 
 @font-face {
   font-family: 'A10';
@@ -8,7 +8,7 @@
 }
 
 :root {
-  --font-ui: 'Sora', sans-serif;
+  --font-ui: 'Sniglet', cursive;
   --font-malayalam: 'A10', sans-serif;
   --font-english: 'Schoolbell', cursive;
 
@@ -265,6 +265,16 @@ button {
 
 .animate-fade-in {
   animation: fadeIn 0.4s ease forwards;
+}
+
+/* --- Drafting Animation --- */
+.writing-anim {
+  animation: pulse-float 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-12px) scale(1.05); opacity: 1; }
 }
 
 /* --- iOS Inspired Mobile Bottom Nav --- */

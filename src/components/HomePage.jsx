@@ -42,12 +42,13 @@ export default function HomePage({ onStart }) {
             className="btn-primary" 
             onClick={onStart} 
             style={{ 
-              padding: '16px 40px', 
-              fontSize: '20px', 
-              boxShadow: '0 10px 30px rgba(0,0,0,0.3)' 
+              padding: '12px 30px', 
+              fontSize: '18px', 
+              borderRadius: '28px 10px 28px 10px', // Playful, slightly irregular shape
+              boxShadow: '0 8px 24px rgba(0,0,0,0.2)' 
             }}
           >
-            Create Your Letter
+            Write Your Letter
           </button>
         </div>
       </div>

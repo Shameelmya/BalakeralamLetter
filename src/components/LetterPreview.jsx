@@ -59,12 +59,11 @@ export default function LetterPreview({ data, onEdit, onNew }) {
   return (
     <div className="animate-fade-in" style={{ paddingTop: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '80px', overflow: 'hidden' }}>
       
-      <h2 style={{ fontSize: '20px', marginBottom: '8px', color: 'var(--color-primary)' }}>
-        A little piece of your heart, on paper. ❤️
-      </h2>
-      <p style={{ color: '#666', marginBottom: '16px', fontSize: '14px' }}>
-        Ready to turn your words into something they'll keep?
-      </p>
+      <div style={{ textAlign: 'center', margin: '24px 16px 24px' }}>
+        <h2 style={{ fontFamily: 'var(--font-malayalam)', fontSize: '24px', color: 'var(--color-primary)', fontWeight: 300 }}>
+          എത്രയും പ്രിയപ്പെട്ട ടീച്ചർ വായിക്കാൻ.. ❤️
+        </h2>
+      </div>
 
       {errorMsg && (
         <div style={{ padding: '12px', backgroundColor: '#FDECEC', color: 'var(--color-primary)', borderRadius: '8px', marginBottom: '16px', fontSize: '14px' }}>
@@ -72,55 +71,73 @@ export default function LetterPreview({ data, onEdit, onNew }) {
         </div>
       )}
 
-      {/* Wrapper to hold the scaled paper without overlapping other elements */}
+      {/* Wrapper to hold the scaled paper and menu as one card */}
       <div 
         style={{ 
           width: 794 * scale, 
-          height: 1123 * scale,
           marginBottom: '32px',
-          transition: 'all 0.3s ease'
+          boxShadow: '0 15px 40px rgba(0,0,0,0.15)',
+          borderRadius: '24px',
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          backgroundColor: 'var(--color-primary)'
         }}
       >
-        <div style={{ '--a4-scale': scale }}>
-          <A4Paper ref={paperRef} name={data.name} content={data.content} />
+        <div 
+          style={{ 
+            width: '100%', 
+            height: 1123 * scale,
+            position: 'relative'
+          }}
+        >
+          <div style={{ '--a4-scale': scale, transformOrigin: 'top left', position: 'absolute', top: 0, left: 0 }}>
+            <A4Paper ref={paperRef} name={data.name} content={data.content} />
+          </div>
         </div>
-      </div>
 
-      {/* iOS Inspired Floating Bottom Nav */}
-      <div className="mobile-bottom-nav">
-        
-        {/* Share Button */}
-        <button className="nav-item" onClick={handleShare} disabled={isExporting} style={{ opacity: isExporting ? 0.5 : 1 }}>
-          <div className="icon-wrapper" style={{ backgroundColor: '#e8f5e9', color: '#2e7d32' }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
-          </div>
-          <span>Share</span>
-        </button>
-        
-        {/* Save Button */}
-        <button className="nav-item" onClick={handleDownloadPNG} disabled={isExporting} style={{ opacity: isExporting ? 0.5 : 1 }}>
-          <div className="icon-wrapper" style={{ backgroundColor: '#e3f2fd', color: '#1565c0' }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          </div>
-          <span>Save</span>
-        </button>
-        
-        {/* Edit Button */}
-        <button className="nav-item" onClick={onEdit} disabled={isExporting} style={{ opacity: isExporting ? 0.5 : 1 }}>
-          <div className="icon-wrapper" style={{ backgroundColor: '#fff3e0', color: '#e65100' }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-          </div>
-          <span>Edit</span>
-        </button>
-        
-        {/* New Button */}
-        <button className="nav-item" onClick={onNew} disabled={isExporting} style={{ opacity: isExporting ? 0.5 : 1 }}>
-          <div className="icon-wrapper" style={{ backgroundColor: '#f3e5f5', color: '#7b1fa2' }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-          </div>
-          <span>New</span>
-        </button>
-        
+        {/* Brown Menu Area */}
+        <div style={{
+          width: '100%',
+          backgroundColor: 'var(--color-primary)', 
+          display: 'flex',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          padding: '16px 8px',
+        }}>
+          {/* Share Button */}
+          <button onClick={handleShare} disabled={isExporting} style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', cursor: 'pointer', opacity: isExporting ? 0.5 : 1 }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '16px', backgroundColor: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', transition: 'transform 0.2s' }} onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.92)'} onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+            </div>
+            <span style={{ fontSize: '11px', color: 'white', fontWeight: 300, opacity: 0.9 }}>Share</span>
+          </button>
+          
+          {/* Save Button */}
+          <button onClick={handleDownloadPNG} disabled={isExporting} style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', cursor: 'pointer', opacity: isExporting ? 0.5 : 1 }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '16px', backgroundColor: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', transition: 'transform 0.2s' }} onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.92)'} onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+            <span style={{ fontSize: '11px', color: 'white', fontWeight: 300, opacity: 0.9 }}>Save</span>
+          </button>
+          
+          {/* Edit Button */}
+          <button onClick={onEdit} disabled={isExporting} style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', cursor: 'pointer', opacity: isExporting ? 0.5 : 1 }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '16px', backgroundColor: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', transition: 'transform 0.2s' }} onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.92)'} onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            </div>
+            <span style={{ fontSize: '11px', color: 'white', fontWeight: 300, opacity: 0.9 }}>Edit</span>
+          </button>
+          
+          {/* New Button */}
+          <button onClick={onNew} disabled={isExporting} style={{ background: 'none', border: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', cursor: 'pointer', opacity: isExporting ? 0.5 : 1 }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '16px', backgroundColor: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', transition: 'transform 0.2s' }} onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.92)'} onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </div>
+            <span style={{ fontSize: '11px', color: 'white', fontWeight: 300, opacity: 0.9 }}>New</span>
+          </button>
+          
+        </div>
       </div>
     </div>
   )
