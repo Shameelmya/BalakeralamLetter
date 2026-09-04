@@ -22,6 +22,35 @@ export const exportToImage = async (elementRef, filename = "Teachers-Day-Letter.
   }
 }
 
+export const exportToPDF = async (elementRef, filename = "Teachers-Day-Letter.pdf") => {
+  if (!elementRef.current) return false
+
+  try {
+    const canvas = await html2canvas(elementRef.current, {
+      scale: 6, // Very high quality
+      useCORS: true,
+      backgroundColor: '#FDFBF7'
+    })
+    
+    const imgData = canvas.toDataURL('image/png')
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    })
+    
+    const pdfWidth = pdf.internal.pageSize.getWidth()
+    const pdfHeight = pdf.internal.pageSize.getHeight()
+    
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
+    pdf.save(filename)
+    return true
+  } catch (error) {
+    console.error("PDF Export failed", error)
+    return false
+  }
+}
+
 export const shareImage = async (blob, filename = "Teachers-Day-Letter.png") => {
   if (!blob) return false
 
