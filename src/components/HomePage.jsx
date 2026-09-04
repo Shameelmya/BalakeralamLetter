@@ -41,8 +41,8 @@ export default function HomePage({ onStart }) {
         aspectRatio: '1080 / 1920',
         pointerEvents: 'none'
       }}>
-        {/* Adjusted bottom position to move button slightly lower */}
-        <div style={{ position: 'absolute', bottom: '12%', left: '50%', transform: 'translateX(-50%)', width: '100%', textAlign: 'center', pointerEvents: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+        {/* Adjusted bottom position to move button significantly lower */}
+        <div style={{ position: 'absolute', bottom: '6%', left: '50%', transform: 'translateX(-50%)', width: '100%', textAlign: 'center', pointerEvents: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
           <button 
             className="btn-primary" 
             onClick={onStart} 
