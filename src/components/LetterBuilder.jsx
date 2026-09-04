@@ -5,12 +5,21 @@ const MAX_CHARS = 700
 
 export default function LetterBuilder({ initialData, onSubmit }) {
   const [name, setName] = useState(initialData?.name || '')
-  const [mode, setMode] = useState(initialData?.templateId ? `template-${initialData.templateId}` : 'custom')
-  const [content, setContent] = useState(initialData?.content || '')
+  const [mode, setMode] = useState(initialData?.templateId ? `template-${initialData.templateId}` : (initialData?.content ? 'custom' : 'template-1'))
+  const [content, setContent] = useState(() => {
+    if (initialData?.content) return initialData.content;
+    const tpl = templates.find(t => t.id === 1);
+    return tpl ? tpl.content : '';
+  })
   const [errorMsg, setErrorMsg] = useState('')
   const errorRef = useRef(null)
+  const isFirstMount = useRef(true)
 
   useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
     if (mode.startsWith('template-')) {
       const tplId = parseInt(mode.split('-')[1])
       const tpl = templates.find(t => t.id === tplId)
