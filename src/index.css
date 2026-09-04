@@ -213,19 +213,7 @@ button {
   padding: 194px 110px 40px 130px; /* Pushed top padding down so text starts on the 6th line, increased L/R margins */
 }
 
-.a4-paper::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
-  background-position: 0 42px; /* Adjusted so lines align with text baseline perfectly */
-  background-repeat: repeat;
-  pointer-events: none;
-  /* Mask out the top 204px and bottom (after 1000px) */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 204px, black 204px, black 1000px, transparent 1000px);
-  mask-image: linear-gradient(to bottom, transparent 204px, black 204px, black 1000px, transparent 1000px);
-  z-index: 0;
-}
+
 
 .a4-content {
   font-family: var(--font-malayalam);
