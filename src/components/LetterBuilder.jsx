@@ -59,7 +59,7 @@ export default function LetterBuilder({ initialData, onSubmit }) {
     }}>
       <div style={{ maxWidth: '600px', margin: '0 auto', padding: '0 16px' }}>
         
-        <h2 style={{ fontSize: '24px', marginBottom: '24px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 300, whiteSpace: 'nowrap', fontFamily: 'var(--font-malayalam)' }}>
+        <h2 style={{ fontSize: '24px', marginBottom: '24px', color: 'var(--color-magenta)', textAlign: 'center', fontWeight: 300, whiteSpace: 'nowrap', fontFamily: 'var(--font-prakasham)' }}>
           പ്രിയപ്പെട്ട ടീച്ചറേ.. ❤️
         </h2>
 
@@ -141,7 +141,7 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         <button 
           className="btn-primary" 
           onClick={handleSubmit} 
-          style={{ width: '100%', maxWidth: '240px', padding: '16px 0', fontSize: '18px', borderRadius: '16px', boxShadow: '0 8px 24px rgba(192, 90, 23, 0.3)' }}
+          style={{ width: 'auto', padding: '16px 48px', fontSize: '18px', borderRadius: '16px', boxShadow: '0 8px 24px rgba(192, 90, 23, 0.3)' }}
         >
           Generate Letter
         </button>

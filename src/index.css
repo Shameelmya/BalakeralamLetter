@@ -8,9 +8,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'FSLPrakasham';
+  src: url('/FSL PRAKASHAM REGULAR.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --font-ui: 'Sniglet', cursive;
   --font-malayalam: 'A10', sans-serif;
+  --font-prakasham: 'FSLPrakasham', sans-serif;
   --font-english: 'Schoolbell', cursive;
 
   --color-bg: #EAE0D5; /* A warm off-white/light brown background */

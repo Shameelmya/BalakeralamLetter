@@ -60,7 +60,7 @@ export default function LetterPreview({ data, onEdit, onNew }) {
     <div className="animate-fade-in" style={{ paddingTop: '0px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '80px', overflow: 'hidden' }}>
       
       <div style={{ textAlign: 'center', margin: '0px 16px 12px' }}>
-        <h2 style={{ fontFamily: 'var(--font-malayalam)', fontSize: '18px', color: 'var(--color-primary)', fontWeight: 800 }}>
+        <h2 style={{ fontFamily: 'var(--font-prakasham)', fontSize: '18px', color: 'var(--color-primary)', fontWeight: 800 }}>
           എത്രയും പ്രിയപ്പെട്ട ടീച്ചർ വായിക്കാൻ.. ❤️
         </h2>
       </div>
