@@ -263,3 +263,58 @@ button {
 .animate-fade-in {
   animation: fadeIn 0.4s ease forwards;
 }
+
+/* --- iOS Inspired Mobile Bottom Nav --- */
+.mobile-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  height: 85px; 
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 28px; 
+  position: fixed;
+  bottom: 16px;
+  left: 16px; 
+  right: 16px; 
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 50;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); 
+  padding: 0 8px; 
+  border: 1px solid rgba(255, 255, 255, 0.4); 
+}
+
+.mobile-bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 64px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-bottom-nav .icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; 
+  height: 48px; 
+  border-radius: 16px; 
+  transition: all 0.2s ease;
+}
+
+.mobile-bottom-nav .icon-wrapper:active {
+  transform: scale(0.92);
+}
+
+.mobile-bottom-nav .nav-item span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #555;
+  transition: color 0.3s ease;
+}

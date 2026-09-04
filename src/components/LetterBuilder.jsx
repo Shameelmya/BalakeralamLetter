@@ -63,7 +63,7 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         )}
 
         <div style={{ marginBottom: '16px' }}>
-          <label style={{ display: 'block', marginBottom: '6px', fontWeight: 300, color: 'var(--color-text)', fontSize: '14px' }}>
+          <label style={{ display: 'block', marginBottom: '6px', fontWeight: 400, color: '#888', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             What's your name?
           </label>
           <input 
@@ -77,7 +77,7 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         </div>
 
         <div style={{ marginBottom: '16px' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 300, color: 'var(--color-text)', fontSize: '14px' }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 400, color: '#888', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             Choose a Template
           </label>
           <div style={{ display: 'flex', gap: '6px', flexWrap: 'nowrap', overflowX: 'auto', paddingBottom: '4px' }}>
@@ -102,7 +102,7 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         </div>
 
         <div style={{ marginBottom: '16px' }}>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 300, color: 'var(--color-text)' }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontWeight: 400, color: '#888', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             Write or edit your letter here (Max ~{MAX_CHARS} chars):
           </label>
           <div style={{ position: 'relative' }}>
@@ -127,11 +127,11 @@ export default function LetterBuilder({ initialData, onSubmit }) {
         </div>
       </div>
 
-      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, padding: '16px', background: 'white', borderTop: '1px solid #EAE0D5', display: 'flex', justifyContent: 'center', zIndex: 10, boxShadow: '0 -4px 10px rgba(0,0,0,0.05)' }}>
+      <div style={{ position: 'fixed', bottom: '16px', left: '16px', right: '16px', display: 'flex', justifyContent: 'center', zIndex: 10, maxWidth: '600px', margin: '0 auto' }}>
         <button 
           className="btn-primary" 
           onClick={handleSubmit} 
-          style={{ width: '100%', maxWidth: '600px' }}
+          style={{ width: '100%', padding: '18px 0', fontSize: '16px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(192, 90, 23, 0.3)' }}
         >
           Generate Letter
         </button>
