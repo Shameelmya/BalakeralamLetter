@@ -114,7 +114,7 @@ function App() {
       )}
 
       {step === 'generating' && (
-        <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100%', backgroundColor: 'var(--color-bg)' }}>
+        <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '25vh', height: '100vh', width: '100%', backgroundColor: 'var(--color-bg)' }}>
           <div style={{
             width: '40px',
             height: '40px',

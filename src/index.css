@@ -208,7 +208,7 @@ button {
   overflow: hidden;
   /* Using SVG background combined with a linear-gradient mask to hide the top 7 lines (up to ~280px). */
   background-image: 
-    linear-gradient(to bottom, var(--color-paper) 280px, transparent 280px),
+    linear-gradient(to bottom, var(--color-paper) 280px, transparent 280px, transparent 1000px, var(--color-paper) 1000px),
     url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
   background-position: 0 0, 0 42px; /* Adjusted so lines align with text baseline perfectly */
   background-repeat: no-repeat, repeat;
