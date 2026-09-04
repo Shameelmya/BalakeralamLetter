@@ -197,10 +197,13 @@ button {
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  /* Using SVG background to ensure html2canvas captures the lines reliably. Adding gap on sides and more opacity */
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
-  background-position: 0 42px; /* Adjusted so lines align with text baseline perfectly */
-  padding: 156px 80px 40px 100px; /* Pushed top padding down so text starts on the 5th line */
+  /* Using SVG background combined with a linear-gradient mask to hide the top 7 lines (up to ~280px). */
+  background-image: 
+    linear-gradient(to bottom, var(--color-paper) 280px, transparent 280px),
+    url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-position: 0 0, 0 42px; /* Adjusted so lines align with text baseline perfectly */
+  background-repeat: no-repeat, repeat;
+  padding: 270px 80px 40px 100px; /* Pushed top padding down so text starts on the 8th line */
 }
 
 .a4-content {
