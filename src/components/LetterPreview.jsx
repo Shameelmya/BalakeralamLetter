@@ -77,7 +77,6 @@ export default function LetterPreview({ data, onEdit, onNew }) {
           width: 794 * scale, 
           marginBottom: '32px',
           boxShadow: '0 15px 40px rgba(0,0,0,0.15)',
-          borderRadius: '24px',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
@@ -91,7 +90,6 @@ export default function LetterPreview({ data, onEdit, onNew }) {
             width: '100%', 
             height: 1123 * scale,
             position: 'relative',
-            borderRadius: '24px 24px 0 0',
             overflow: 'hidden'
           }}
         >
