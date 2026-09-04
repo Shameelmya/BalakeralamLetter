@@ -203,16 +203,28 @@ button {
   width: 794px;
   height: 1123px;
   background-color: var(--color-paper);
+  background-image: url('/letter.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  /* Using SVG background combined with a linear-gradient mask to hide the top 7 lines (up to ~280px). */
-  background-image: 
-    linear-gradient(to bottom, var(--color-paper) 280px, transparent 280px, transparent 1000px, var(--color-paper) 1000px),
-    url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
-  background-position: 0 0, 0 42px; /* Adjusted so lines align with text baseline perfectly */
-  background-repeat: no-repeat, repeat;
   padding: 270px 80px 40px 100px; /* Pushed top padding down so text starts on the 8th line */
+}
+
+.a4-paper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='38' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 37 L 734 37' stroke='rgba(0,0,255,0.15)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-position: 0 42px; /* Adjusted so lines align with text baseline perfectly */
+  background-repeat: repeat;
+  pointer-events: none;
+  /* Mask out the top 280px and bottom (after 1000px) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 280px, black 280px, black 1000px, transparent 1000px);
+  mask-image: linear-gradient(to bottom, transparent 280px, black 280px, black 1000px, transparent 1000px);
+  z-index: 0;
 }
 
 .a4-content {
